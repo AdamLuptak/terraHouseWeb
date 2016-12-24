@@ -25,7 +25,7 @@ p
     }
 
 /* start all section */
-#service, #divider, #about, #team, #newsletter,
+#features, #divider, #about, #team, #newsletter,
  #pricing, #portfolio, #client, #contact
     {
         padding-top: 100px;
@@ -159,25 +159,28 @@ p
 
 /* end home */
 
-/* start service */
-#service .media
+/* start features */
+#features .media
     {
         padding: 10px;
     }
-#service .media .fa
+
+#features .media .fa
     {
         color: #202020;
         font-size: 40px;
         margin-right: 20px;
     }
-#service .media .media-heading
+
+#features .media .media-heading
     {
         border-bottom: 2px solid #202020;
         font-weight: 600;
         font-size: 20px;
         padding-bottom: 10px;
     }
-/* end service */
+
+/* end features */
 
 /* start divider */
 #divider
@@ -277,7 +280,7 @@ p
 /* start newsletter */
 #newsletter
     {
-        background: url('../images/newsletter-bg.jpg') center center;
+    background: url('../images/slider/2.jpg') center center;
         background-size: cover;
         background-repeat: no-repeat;
         color: #ffffff;
@@ -397,18 +400,20 @@ p
   }
 /* end pricing */
 
-/* start portfolio */
-#portfolio h2
+/* start photos */
+#photos h2
     {
         padding-bottom: 30px;
     }
-#portfolio .portfolio-thumb
+
+#photos .portfolio-thumb
     {
         overflow: hidden;
         margin: 0;
         position: relative;
     }
-#portfolio .portfolio-thumb .portfolio-overlay
+
+#photos .portfolio-thumb .portfolio-overlay
     {
         background: #333;
         color: #ffffff;
@@ -424,12 +429,14 @@ p
         opacity: 0;
         transition: all 0.4s ease-in-out;
     }
-#portfolio .portfolio-thumb:hover .portfolio-overlay
+
+#photos .portfolio-thumb:hover .portfolio-overlay
     {
         opacity: 0.9;
         transform: scale(1.1);
     }
-#portfolio .portfolio-thumb .portfolio-overlay .fa
+
+#photos .portfolio-thumb .portfolio-overlay .fa
     {
         border: 1px solid #ffffff;
         border-radius: 50%;
