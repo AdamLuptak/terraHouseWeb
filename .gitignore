@@ -1,2 +1,6 @@
 .idea/
 node_modules/
+.tmp/
+Finish_front_add_WIP_email.patch
+dist/
+/.tmp/
