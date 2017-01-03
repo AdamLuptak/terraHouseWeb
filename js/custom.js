@@ -42,7 +42,7 @@ $(function(){
 
   new WOW().init();
 
-  loadGoogleMap();
+    //loadGoogleMap();
 });
 
 // isotope
