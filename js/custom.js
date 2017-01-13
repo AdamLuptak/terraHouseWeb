@@ -32,6 +32,45 @@ function loadGoogleMap(){
     document.body.appendChild(script);
 }
 
+$(function () {
+    $("#free-call-form").submit(function (e) {
+        e.preventDefault();
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "/email",
+            dataType: "json", // Add datatype
+            data: form_data
+        }).done(function (data) {
+            console.log("somtu");
+            console.log(data);
+            alert("It's OK!");
+        }).fail(function (data) {
+            console.log(data);
+        });
+    });
+});
+
+$(function () {
+    $("#newsLetterPost").submit(function (e) {
+        e.preventDefault();
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "/news",
+            dataType: "json", // Add datatype
+            data: form_data
+        }).done(function (data) {
+            console.log("somtu");
+            console.log(data);
+            alert("It's OK!");
+        }).fail(function (data) {
+            console.log(data);
+        });
+    });
+});
+
+
 // Flexslider
 $(function(){
   /* FlexSlider */

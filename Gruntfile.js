@@ -113,6 +113,9 @@ module.exports = function (grunt) {
             },
             font: {
                 src: './fonts/**', dest: 'dist/'
+            },
+            node: {
+                src: ['./server.js', './package.json'], dest: 'dist/'
             }
         }
     });
@@ -126,6 +129,7 @@ module.exports = function (grunt) {
         'copy:html',
         'copy:img',
         'copy:font',
+        'copy:node',
         'useminPrepare',
         'concat:generated',
         'cssmin:generated',
