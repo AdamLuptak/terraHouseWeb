@@ -11,7 +11,7 @@ module.exports = function (grunt) {
                 livereload: true
             },
             css: {
-                files: ['css/**/*.css', 'dist/css/**/*.css']
+                files: ['css/**/*.css', 'dist/public/css/**/*.css']
             },
             js: {
                 files: ['js/**/*.js']
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
             serve: {
                 options: {
                     port: 9001,
-                    base: './dist',
+                    base: './dist/public',
                     hostname: '0.0.0.0',
                     protocol: 'http',
                     livereload: true,
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
         cssmin: {
             generated: {
                 files: [{
-                    dest: 'dist/css/style.min.css',
+                    dest: 'dist/public/css/style.min.css',
                     src: ['.tmp/concat/assets/css/style.min.css']
                 }]
             }
@@ -86,33 +86,33 @@ module.exports = function (grunt) {
             generated: {
                 files: [
                     {
-                        dest: 'dist/assets/js/vender.js',
+                        dest: 'dist/public/assets/js/vender.js',
                         src: ['.tmp/concat/assets/js/vender.js']
                     }
                 ]
             }
         },
         usemin: {
-            html: 'dist/index.html'
+            html: 'dist/public/index.html'
         },
         useminPrepare: {
             html: 'index.html',
             options: {
-                dest: 'dist'
+                dest: 'dist/public/'
             }
         },
         copy: {
             html: {
-                src: './index.html', dest: 'dist/index.html'
+                src: './index.html', dest: 'dist/public/index.html'
             },
             // css: {
             //     src: './css/*', dest: 'dist/'
             // },
             img: {
-                src: './images/**', dest: 'dist/'
+                src: './images/**', dest: 'dist/public/'
             },
             font: {
-                src: './fonts/**', dest: 'dist/'
+                src: './fonts/**', dest: 'dist/public/'
             },
             node: {
                 src: ['./server.js', './package.json'], dest: 'dist/'

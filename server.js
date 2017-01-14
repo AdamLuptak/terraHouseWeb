@@ -1,25 +1,26 @@
 /**
  * Created by adam on 13.1.2017.
  */
-
 var express = require('express');
 var app = express();
 var nodemailer = require('nodemailer');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var smtpTransport = require('nodemailer-smtp-transport');
+
 app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 
-app.use('/', express.static(__dirname + '/'));
+app.use('/', express.static(__dirname + '/public'));
 
-var transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport(smtpTransport({
     service: 'Gmail',
     auth: {
         user: 'adamluptakosice@gmail.com', // Your email id
         pass: 'adamlupt' // Your password
     }
-});
+}));
 
 app.post('/email', function (req, res) {
     var htmlContent = '<p>Name: ' + req.body.name + '</p>' +
@@ -57,11 +58,15 @@ app.post('/news', function (req, res) {
             console.log(err);
         } else {
             console.log('Message sent: ' + info.response);
-            return res.json(201, info);
+            return res.status(201).json(info);
         }
     });
 });
 
+
+app.get('server.js', function (req, res) {
+    res.status(404).end('error');
+});
 
 app.get('*', function (req, res) {
     res.status(404).end('error');
